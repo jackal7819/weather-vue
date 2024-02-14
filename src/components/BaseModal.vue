@@ -15,7 +15,7 @@
 				v-show="modalActive"
 				class="absolute top-0 left-0 flex items-center justify-center w-full h-screen px-10 md:px-20 bg-opacity-40 bg-slate-900"
 			>
-				<Transition name="slide-fade">
+				<Transition>
 					<div
 						v-if="modalActive"
 						class="max-w-screen-sm p-4 rounded bg-slate-200"
@@ -35,17 +35,13 @@
 </template>
 
 <style scoped>
-	.slide-fade-enter-active {
-		transition: all 0.3s ease-out;
+	.v-enter-active,
+	.v-leave-active {
+		transition: opacity 0.5s ease;
 	}
 
-	.slide-fade-leave-active {
-		transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-	}
-
-	.slide-fade-enter-from,
-	.slide-fade-leave-to {
-		transform: scale(0.8);
+	.v-enter-from,
+	.v-leave-to {
 		opacity: 0;
 	}
 </style>

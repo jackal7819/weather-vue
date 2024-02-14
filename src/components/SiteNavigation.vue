@@ -10,7 +10,7 @@
 </script>
 
 <template>
-	<header class="sticky top-0 shadow-lg shadow-slate-400">
+	<header class="sticky top-0 shadow-md shadow-slate-400">
 		<nav
 			class="flex flex-col items-center w-5/6 gap-4 py-4 mx-auto max-w-screen-2xl sm:flex-row"
 		>
