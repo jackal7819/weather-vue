@@ -7,15 +7,20 @@
 	const searchQuery = ref('');
 	const queryTimeout = ref(null);
 	const mapboxSearchResults = ref(null);
+	const searchError = ref(null);
 
 	const getSearchResults = () => {
 		clearTimeout(queryTimeout.value);
 		queryTimeout.value = setTimeout(async () => {
 			if (searchQuery.value !== '') {
-				const result = await axios.get(
-					`${url}/${searchQuery.value}.json?access_token=${token}&types=place`
-				);
-				mapboxSearchResults.value = result.data.features;
+				try {
+					const result = await axios.get(
+						`${url}/${searchQuery.value}.json?access_token=${token}&types=place`
+					);
+					mapboxSearchResults.value = result.data.features;
+				} catch {
+					searchError.value = true;
+				}
 				return;
 			}
 			mapboxSearchResults.value = null;
@@ -38,13 +43,24 @@
 					class="absolute w-full px-1 py-2 top-[66px] shadow-md shadow-sky-700 bg-slate-400 text-slate-900 rounded"
 					v-if="mapboxSearchResults"
 				>
-					<li
-						class="p-2 duration-300 cursor-pointer hover:text-sky-700"
-						v-for="searchResult in mapboxSearchResults"
-						:key="searchResult.id"
+					<p class="p-2 text-sky-700" v-if="searchError">
+						Sorry, something went wrong. Please try again.
+					</p>
+					<p
+						class="p-2 text-sky-700"
+						v-if="!searchError && mapboxSearchResults.length === 0"
 					>
-						{{ searchResult.place_name }}
-					</li>
+						No results match your query, try a different term
+					</p>
+					<template v-else>
+						<li
+							class="p-2 duration-300 cursor-pointer hover:text-sky-700"
+							v-for="searchResult in mapboxSearchResults"
+							:key="searchResult.id"
+						>
+							{{ searchResult.place_name }}
+						</li>
+					</template>
 				</ul>
 			</div>
 		</main>
