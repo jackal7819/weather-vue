@@ -15,7 +15,7 @@
 
 		const locationObj = {
 			id: nanoid(),
-			region: route.params.region,
+			state: route.params.state,
 			city: route.params.city,
 			coords: {
 				lat: route.query.lat,
