@@ -3,6 +3,7 @@
 	import axios from 'axios';
 	import { useRouter } from 'vue-router';
 	import CityList from '@/components/CityList.vue';
+	import CityCardSkeleton from '@/components/CityCardSkeleton.vue';
 
 	const token = import.meta.env.VITE_API_KEY;
 	const url = import.meta.env.VITE_API_URL;
@@ -86,7 +87,7 @@
 			<Suspense>
 				<CityList />
 				<template #fallback>
-					<h1 class="text-2xl text-center mt-[40vh]">Loading...</h1>
+					<CityCardSkeleton />
 				</template>
 			</Suspense>
 		</div>

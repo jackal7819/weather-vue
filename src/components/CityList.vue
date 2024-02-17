@@ -23,6 +23,8 @@
 
 			const weatherData = await Promise.all(requests);
 
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+
 			weatherData.forEach((data, index) => {
 				savedCities.value[index].weather = data.data;
 			});
