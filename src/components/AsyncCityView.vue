@@ -34,7 +34,7 @@
 <template>
 	<div class="flex flex-col items-center flex-1">
 		<div
-			v-if="route.query"
+			v-if="route.query.preview"
 			class="w-full p-4 text-center text-slate-200 bg-sky-700"
 		>
 			<p>
