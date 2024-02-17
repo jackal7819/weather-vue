@@ -1,29 +1,43 @@
-# .
+## About the Weather App
 
-This template should help get you started developing with Vue 3 in Vite.
+The Weather App is a modern and user-friendly web application that allows users to access accurate weather information for cities around the world. It provides a seamless experience for users to search for cities, view current weather conditions, check hourly and weekly forecasts, and save favorite cities for quick access.
 
-## Recommended IDE Setup
+### Search City
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Users can easily search for cities by name using the search feature. The app utilizes the OpenWeather API to retrieve real-time weather data for the searched city.
 
-## Customize configuration
+### Current Temperature
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Once a city is selected, users can view the current temperature along with additional weather details such as humidity, wind speed, and weather conditions.
 
-## Project Setup
+### Hourly Forecast
 
-```sh
-npm install
-```
+The app provides an hourly forecast for the next 24 hours, allowing users to plan their activities accordingly based on the expected weather conditions throughout the day.
 
-### Compile and Hot-Reload for Development
+### Weekly Forecast
 
-```sh
-npm run dev
-```
+Users can also access a weekly forecast to see the weather outlook for the upcoming week, helping them plan ahead for trips or outdoor events.
 
-### Compile and Minify for Production
+### Save Cities
 
-```sh
-npm run build
-```
+To enhance user experience, the app allows users to save their favorite cities to local storage. This feature enables users to quickly access the weather information for their preferred locations without the need for repeated searches.
+
+## Technologies Used
+
+### Vue 3
+
+Vue.js is a popular JavaScript framework for building user interfaces. Vue 3 offers improved performance and enhanced features for building dynamic web applications.
+
+### Vue Router
+
+Vue Router is the official router for Vue.js applications. It enables navigation between different views/components in a Vue application, allowing for a seamless and intuitive user experience.
+
+### Tailwind CSS
+
+Tailwind CSS is a utility-first CSS framework that allows for rapid development of custom designs. It provides a set of pre-built utility classes that can be easily applied to HTML elements to style the application.
+
+### OpenWeather API
+
+The OpenWeather API is a powerful weather data API that provides access to accurate and up-to-date weather information for cities worldwide. It offers a wide range of weather data, including current conditions, forecasts, and historical data.
+
+With the combination of these technologies, the Weather App delivers a modern, responsive, and feature-rich experience for users to stay informed about the weather conditions in their desired locations.
